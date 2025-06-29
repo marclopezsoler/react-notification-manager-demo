@@ -12,12 +12,12 @@
 }
 
 :root.light {
-  --bg: #ffffffde;
+  --bg: #e3e3e3;
   --fg: #242424;
 }
 :root.dark {
   --bg: #242424;
-  --fg: #ffffffde;
+  --fg: #e3e3e3;
 }
 
 a {
