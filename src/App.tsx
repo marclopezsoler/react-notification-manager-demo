@@ -269,6 +269,7 @@ function App() {
                 type: "none",
                 align: ["top", "middle"],
                 canClose: true,
+                duration: -1,
               })
             }
           >
