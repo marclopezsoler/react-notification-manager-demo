@@ -1,5 +1,5 @@
 #root {
-  height: calc(100vh - 4rem);
+  min-height: 100vh;
   padding: 2rem;
   margin: 0 auto;
   text-align: center;
@@ -39,4 +39,28 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--fg);
+  border-radius: 8px;
+  padding: 12px 24px;
+  width: 100%;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.row-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }

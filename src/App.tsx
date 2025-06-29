@@ -21,7 +21,8 @@ function App() {
         alignItems: "center",
         justifyContent: "space-between",
         height: "100%",
-        gap: 16,
+        gap: 32,
+        padding: 24,
       }}
     >
       <h1 style={{ fontSize: 32, fontWeight: 600 }}>
@@ -34,260 +35,271 @@ function App() {
           REACT NOTIFICATION MANAGER
         </a>
       </h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 8,
-        }}
-      >
-        <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
-          Switch to {mode === "light" ? "Dark" : "Light"} Mode
-        </button>
 
-        {/* SUCCESS */}
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Success!",
-              subMessage: "Operation completed successfully.",
-              type: "success",
-              align: ["top", "left"],
-              hasIcon: true,
-              canClose: true,
-              colored: "full",
-            })
-          }
-        >
-          Success Full
-        </button>
+      {/* Switch Mode */}
+      <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+        Switch to {mode === "light" ? "Dark" : "Light"} Mode
+      </button>
 
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Success Border",
-              type: "success",
-              align: ["bottom", "middle"],
-              hasIcon: true,
-              canClose: true,
-              colored: "border",
-            })
-          }
-        >
-          Success Border
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Success Plain",
-              type: "success",
-              align: ["top", "right"],
-              hasIcon: false,
-              colored: "plain",
-            })
-          }
-        >
-          Success Plain
-        </button>
-
-        {/* ERROR */}
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Error!",
-              type: "error",
-              align: ["bottom", "left"],
-              hasIcon: true,
-              canClose: true,
-              colored: "full",
-            })
-          }
-        >
-          Error Full
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Error Border",
-              type: "error",
-              align: ["top", "middle"],
-              hasIcon: true,
-              colored: "border",
-            })
-          }
-        >
-          Error Border
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Error Plain",
-              type: "error",
-              align: ["bottom", "right"],
-              hasIcon: false,
-              colored: "plain",
-            })
-          }
-        >
-          Error Plain
-        </button>
-
-        {/* INFO */}
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Info Full",
-              type: "info",
-              align: ["top", "left"],
-              hasIcon: true,
-              canClose: true,
-              colored: "full",
-            })
-          }
-        >
-          Info Full
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Info Border",
-              type: "info",
-              align: ["bottom", "middle"],
-              hasIcon: true,
-              colored: "border",
-            })
-          }
-        >
-          Info Border
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Info Plain",
-              type: "info",
-              align: ["top", "right"],
-              hasIcon: false,
-              colored: "plain",
-            })
-          }
-        >
-          Info Plain
-        </button>
-
-        {/* ALERT */}
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Alert!",
-              type: "alert",
-              align: ["bottom", "left"],
-              hasIcon: true,
-              canClose: true,
-              colored: "full",
-            })
-          }
-        >
-          Alert Full
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Alert Border",
-              type: "alert",
-              align: ["top", "middle"],
-              hasIcon: true,
-              colored: "border",
-            })
-          }
-        >
-          Alert Border
-        </button>
-
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Alert Plain",
-              type: "alert",
-              align: ["bottom", "right"],
-              hasIcon: true,
-              colored: "plain",
-            })
-          }
-        >
-          Alert Plain
-        </button>
-
-        {/* NONE */}
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "No Type",
-              subMessage: "Just a message without styling.",
-              type: "none",
-              align: ["top", "middle"],
-              canClose: true,
-            })
-          }
-        >
-          None Type
-        </button>
-
-        {/* NO DURATION */}
-
-        <button
-          onClick={() =>
-            notify({
-              message: "No duration",
-              subMessage: "Just a message that won't close automatically.",
-              type: "none",
-              align: ["top", "middle"],
-              canClose: true,
-            })
-          }
-        >
-          No duration
-        </button>
-
-        {/* CUSTOM ICON */}
-        <button
-          onClick={() =>
-            notify({
-              duration: 5000,
-              message: "Custom Icon",
-              type: "info",
-              align: ["top", "middle"],
-              hasIcon: true,
-              canClose: true,
-              colored: "plain",
-              customIcon: <Icon />,
-            })
-          }
-        >
-          Custom Icon
-        </button>
+      {/* SUCCESS */}
+      <div className="row">
+        <h2>Success Notifications</h2>
+        <div className="row-buttons">
+          <button
+            onClick={() =>
+              notify({
+                message: "Success!",
+                subMessage: "Operation completed successfully.",
+                type: "success",
+                duration: -1,
+                canClose: true,
+              })
+            }
+          >
+            Success Custom
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Success Border",
+                type: "success",
+                align: ["bottom", "middle"],
+                hasIcon: true,
+                canClose: true,
+                colored: "border",
+              })
+            }
+          >
+            Success Border
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Success None",
+                type: "success",
+                align: ["top", "right"],
+                hasIcon: false,
+                colored: "none",
+              })
+            }
+          >
+            Success None
+          </button>
+        </div>
       </div>
+
+      {/* ERROR */}
+      <div className="row">
+        <h2>Error Notifications</h2>
+        <div className="row-buttons">
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Error!",
+                type: "error",
+                align: ["bottom", "left"],
+                hasIcon: true,
+                canClose: true,
+                colored: "full",
+              })
+            }
+          >
+            Error Full
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Error Border",
+                type: "error",
+                align: ["top", "middle"],
+                hasIcon: true,
+                colored: "border",
+              })
+            }
+          >
+            Error Border
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Error None",
+                type: "error",
+                align: ["bottom", "right"],
+                hasIcon: false,
+                colored: "none",
+              })
+            }
+          >
+            Error None
+          </button>
+        </div>
+      </div>
+
+      {/* INFO */}
+      <div className="row">
+        <h2>Info Notifications</h2>
+        <div className="row-buttons">
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Info Full",
+                type: "info",
+                align: ["top", "left"],
+                hasIcon: true,
+                canClose: true,
+                colored: "full",
+              })
+            }
+          >
+            Info Full
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Info Border",
+                type: "info",
+                align: ["bottom", "middle"],
+                hasIcon: true,
+                colored: "border",
+              })
+            }
+          >
+            Info Border
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Info None",
+                type: "info",
+                align: ["top", "right"],
+                hasIcon: false,
+                colored: "none",
+              })
+            }
+          >
+            Info None
+          </button>
+        </div>
+      </div>
+
+      {/* ALERT */}
+      <div className="row">
+        <h2>
+          Alert Notifications <br />
+          <i>(customized on package config)</i>
+        </h2>
+        <div className="row-buttons">
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Alert!",
+                type: "alert",
+                align: ["bottom", "left"],
+                hasIcon: true,
+                canClose: true,
+                colored: "full",
+              })
+            }
+          >
+            Alert Custmized
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Alert Border",
+                type: "alert",
+                align: ["top", "middle"],
+                hasIcon: true,
+                colored: "border",
+              })
+            }
+          >
+            Alert Border
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Alert None",
+                type: "alert",
+                align: ["bottom", "right"],
+                hasIcon: true,
+                colored: "none",
+              })
+            }
+          >
+            Alert None
+          </button>
+        </div>
+      </div>
+
+      {/* NONE */}
+      <div className="row">
+        <h2>No Type Notifications</h2>
+        <div className="row-buttons">
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "No Type",
+                subMessage: "Just a message without styling.",
+                type: "none",
+                align: ["top", "middle"],
+                canClose: true,
+              })
+            }
+          >
+            No Type
+          </button>
+          <button
+            onClick={() =>
+              notify({
+                message: "No duration",
+                subMessage: "Just a message that won't close automatically.",
+                type: "none",
+                align: ["top", "middle"],
+                canClose: true,
+              })
+            }
+          >
+            No duration
+          </button>
+        </div>
+      </div>
+
+      {/* CUSTOM ICON */}
+      <div className="row">
+        <h2>Custom Icon Notifications</h2>
+        <div className="row-buttons">
+          <button
+            onClick={() =>
+              notify({
+                duration: 5000,
+                message: "Custom Icon",
+                type: "info",
+                align: ["top", "middle"],
+                hasIcon: true,
+                canClose: true,
+                colored: "none",
+                customIcon: <Icon />,
+              })
+            }
+          >
+            Custom Icon
+          </button>
+        </div>
+      </div>
+
       <p style={{ fontSize: 16, fontWeight: 400 }}>
         Made by{" "}
         <a
