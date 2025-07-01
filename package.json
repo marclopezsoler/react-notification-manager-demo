@@ -12,7 +12,7 @@
   "dependencies": {
     "i": "^0.3.7",
     "install": "^0.13.0",
-    "marc-react-notification-manager": "^1.0.7",
+    "marc-react-notification-manager": "^1.0.8",
     "npm": "^11.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
