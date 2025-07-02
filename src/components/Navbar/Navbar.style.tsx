@@ -1,0 +1,80 @@
+import styled from "styled-components";
+
+import { globals } from "../../globals";
+
+const { xSize, ySize } = globals;
+
+export const NavbarWrapper = styled.nav`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: ${({ theme }) => theme.bg};
+
+  .row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: ${ySize}px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0px 24px;
+
+    img {
+      width: 28px;
+      height: 28px;
+
+      cursor: pointer;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 32px;
+        height: 32px;
+
+        border: none;
+        background-color: transparent;
+
+        cursor: pointer;
+
+        &.dark {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .column {
+    position: absolute;
+    top: ${ySize}px;
+    left: 0;
+    width: ${xSize}px;
+    height: calc(100vh - ${ySize}px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 24px;
+  }
+`;
+
+export const MenuItem = styled.a<{ $isActive: boolean }>`
+  cursor: pointer;
+
+  color: ${({ $isActive, theme }) => ($isActive ? theme.brand : theme.fg)};
+`;
