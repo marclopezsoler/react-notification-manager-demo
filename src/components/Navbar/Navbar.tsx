@@ -7,12 +7,14 @@ import icon from "../../assets/notiflow-icon.svg";
 
 import { routes } from "../../navigation/routes";
 
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
+import VersionSelector from "../VersionSelector/VersionSelector";
+
 import MenuItems from "../../data/menu";
 
 import type { MenuItemType } from "../../types/menu";
 
 import { MenuItem, NavbarWrapper } from "./Navbar.style";
-import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 const Navbar = ({
   currentMode,
@@ -35,6 +37,7 @@ const Navbar = ({
         />
         <div className="right">
           <LanguageSelector />
+          <VersionSelector />
           <button
             onClick={onToggleTheme}
             className={`button ${currentMode === "dark" ? "dark" : "light"}`}

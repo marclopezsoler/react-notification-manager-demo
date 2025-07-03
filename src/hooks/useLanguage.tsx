@@ -14,7 +14,6 @@ export default function useLanguage() {
 
   const handleLangChange = (langCode: string) => {
     localStorage.setItem("lang", JSON.stringify({ code: langCode }));
-    window.location.reload();
   };
 
   const currentLang: Lang = languages.find((l) => l.code === locale) ?? {

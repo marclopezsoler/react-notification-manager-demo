@@ -85,6 +85,7 @@ export const MenuItem = styled.a<{ $isActive: boolean }>`
   opacity: ${({ $isActive }) => ($isActive ? 1 : 0.65)};
 
   font-size: 18px;
+  font-weight: 400;
 
   transition: 0.25s ease;
 

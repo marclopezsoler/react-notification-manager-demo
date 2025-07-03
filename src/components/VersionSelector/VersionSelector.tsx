@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 
-import useLanguage from "../../hooks/useLanguage";
+import useVersion from "../../hooks/useVersion";
 
-import languages, { type Lang } from "../../localization/languages";
+import { VersionSelectorWrapper } from "./VersionSelector.style";
 
-import { LanguageSelectorWrapper } from "./LanguageSelector.style";
+const versions = [1, 2];
 
-const LanguageSelector = () => {
+const VersionSelector = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const { currentLang, handleLangChange } = useLanguage();
+  const { version, toggleVersion } = useVersion();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -29,7 +29,7 @@ const LanguageSelector = () => {
   }, [isOpen]);
 
   return (
-    <LanguageSelectorWrapper ref={dropdownRef}>
+    <VersionSelectorWrapper ref={dropdownRef}>
       <button
         aria-haspopup="listbox"
         aria-expanded={isOpen}
@@ -39,30 +39,30 @@ const LanguageSelector = () => {
         }}
         className="language-selector"
       >
-        {currentLang.label}
+        v{version}
       </button>
       {isOpen && (
         <div role="listbox" className="dropdown">
-          {languages.map((lang: Lang) => (
+          {versions.map((v: number, index: number) => (
             <button
               role="option"
-              key={lang.code}
+              key={index}
               onClick={() => {
-                if (lang !== currentLang) {
-                  handleLangChange(lang.code);
+                if (version !== v) {
+                  toggleVersion(v);
                   setIsOpen(false);
                 } else {
                   setIsOpen(false);
                 }
               }}
             >
-              {lang.label}
+              v{v}
             </button>
           ))}
         </div>
       )}
-    </LanguageSelectorWrapper>
+    </VersionSelectorWrapper>
   );
 };
 
-export default LanguageSelector;
+export default VersionSelector;

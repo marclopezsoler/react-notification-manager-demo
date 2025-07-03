@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     background: ${({ theme }) => theme.bg};
     color: ${({ theme }) => theme.fg};
-    font-family: sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   *, *::before, *::after {
     box-sizing: inherit;
