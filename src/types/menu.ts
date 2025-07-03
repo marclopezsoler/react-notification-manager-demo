@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { routeKeys } from "../screens/routes";
+import { routeKeys } from "../navigation/routes";
 
 export const MenuItemSchema = z.object({
   id: z.number(),

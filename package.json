@@ -12,11 +12,13 @@
   "dependencies": {
     "@tabler/icons-react": "^3.34.0",
     "i": "^0.3.7",
+    "i18next": "^25.3.0",
     "install": "^0.13.0",
     "marc-react-notification-manager": "^1.0.8",
     "npm": "^11.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-i18next": "^15.6.0",
     "react-router-dom": "^7.6.3",
     "styled-components": "^6.1.19",
     "zod": "^3.25.69"

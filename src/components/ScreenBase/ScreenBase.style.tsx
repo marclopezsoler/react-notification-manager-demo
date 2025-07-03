@@ -18,7 +18,22 @@ export const ScreenBaseWrapper = styled.section`
     position: absolute;
     left: ${xSize}px;
     width: calc(100vw - ${xSize}px);
-    top: ${ySize}px;
-    height: calc(100vh - ${ySize}px);
+    top: 0;
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+    margin: 0;
+    padding: 24px;
+
+    padding-top: ${ySize + 24}px;
+    padding-bottom: ${ySize}px;
+
+    background-color: transparent;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
   }
 `;

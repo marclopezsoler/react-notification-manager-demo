@@ -9,10 +9,12 @@ export const NavbarWrapper = styled.nav`
   width: 100vw;
   height: 100vh;
 
-  background-color: ${({ theme }) => theme.bg};
+  z-index: 1;
+
+  background-color: transparent;
 
   .row {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -26,8 +28,8 @@ export const NavbarWrapper = styled.nav`
     padding: 0px 24px;
 
     img {
-      width: 28px;
-      height: 28px;
+      width: 42px;
+      height: 42px;
 
       cursor: pointer;
     }
@@ -36,8 +38,9 @@ export const NavbarWrapper = styled.nav`
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 12px;
 
-      button {
+      .button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -58,7 +61,7 @@ export const NavbarWrapper = styled.nav`
   }
 
   .column {
-    position: absolute;
+    position: fixed;
     top: ${ySize}px;
     left: 0;
     width: ${xSize}px;
@@ -70,6 +73,8 @@ export const NavbarWrapper = styled.nav`
     justify-content: flex-start;
 
     padding: 24px;
+
+    gap: 16px;
   }
 `;
 
@@ -77,4 +82,13 @@ export const MenuItem = styled.a<{ $isActive: boolean }>`
   cursor: pointer;
 
   color: ${({ $isActive, theme }) => ($isActive ? theme.brand : theme.fg)};
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0.65)};
+
+  font-size: 18px;
+
+  transition: 0.25s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 `;

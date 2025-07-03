@@ -3,7 +3,7 @@ import {
   DEFAULT_LIGHT,
   setupNotificationConfig,
 } from "marc-react-notification-manager";
-import { theme } from "./theme";
+import { theme } from "./styles/theme";
 
 setupNotificationConfig({
   defaultMode: "dark",

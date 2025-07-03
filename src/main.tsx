@@ -9,13 +9,18 @@ import {
   NotificationManager,
   NotificationsProvider,
 } from "marc-react-notification-manager";
-
-import AppNavigation from "./navigation/AppNavigation.tsx";
-import "./index.css";
-
+import { I18nextProvider } from "react-i18next";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme.ts";
+import i18n from "./localization/i18n.ts";
+
+import { GlobalStyle } from "./styles/globalStyle.tsx";
+import AppNavigation from "./navigation/AppNavigation.tsx";
+
 import useTheme from "./hooks/useTheme.ts";
+
+import ScreenBase from "./components/ScreenBase/ScreenBase.tsx";
+
+import { theme } from "./styles/theme.ts";
 
 export function Root() {
   const { mode, toggleMode } = useTheme();
@@ -23,10 +28,15 @@ export function Root() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme[mode]}>
-        <NotificationsProvider>
-          <NotificationManager />
-          <AppNavigation currentMode={mode} onToggleTheme={toggleMode} />
-        </NotificationsProvider>
+        <GlobalStyle />
+        <I18nextProvider i18n={i18n}>
+          <NotificationsProvider>
+            <NotificationManager />
+            <ScreenBase currentMode={mode} onToggleTheme={toggleMode}>
+              <AppNavigation />
+            </ScreenBase>
+          </NotificationsProvider>
+        </I18nextProvider>
       </ThemeProvider>
     </BrowserRouter>
   );

@@ -1,17 +1,18 @@
 import { IconBrightnessFilled } from "@tabler/icons-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { theme } from "../../theme";
+import { theme } from "../../styles/theme";
 
 import icon from "../../assets/notiflow-icon.svg";
 
-import { routes } from "../../screens/routes";
+import { routes } from "../../navigation/routes";
 
-import { menuItems } from "../../data/menu";
+import MenuItems from "../../data/menu";
 
 import type { MenuItemType } from "../../types/menu";
 
 import { MenuItem, NavbarWrapper } from "./Navbar.style";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 const Navbar = ({
   currentMode,
@@ -22,6 +23,7 @@ const Navbar = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { menuItems } = MenuItems();
 
   return (
     <NavbarWrapper>
@@ -32,9 +34,10 @@ const Navbar = ({
           onClick={() => navigate(routes.main)}
         />
         <div className="right">
+          <LanguageSelector />
           <button
             onClick={onToggleTheme}
-            className={currentMode === "dark" ? "dark" : "light"}
+            className={`button ${currentMode === "dark" ? "dark" : "light"}`}
           >
             <IconBrightnessFilled color={theme[currentMode].fg} width={20} />
           </button>
