@@ -1,5 +1,7 @@
 import { IconBrightnessFilled } from "@tabler/icons-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import useVersion from "../../hooks/useVersion";
 
 import { theme } from "../../styles/theme";
 
@@ -23,9 +25,9 @@ const Navbar = ({
   currentMode: "light" | "dark";
   onToggleTheme: () => void;
 }) => {
-  const navigate = useNavigate();
   const location = useLocation();
   const { menuItems } = MenuItems();
+  const { navigateWithVersion } = useVersion();
 
   return (
     <NavbarWrapper>
@@ -33,7 +35,7 @@ const Navbar = ({
         <img
           src={icon}
           alt="notiflow icon"
-          onClick={() => navigate(routes.main)}
+          onClick={() => navigateWithVersion(routes.main)}
         />
         <div className="right">
           <LanguageSelector />
@@ -51,7 +53,7 @@ const Navbar = ({
           <MenuItem
             $isActive={location.pathname.includes(item.key)}
             key={item.id}
-            onClick={() => navigate(routes[item.key])}
+            onClick={() => navigateWithVersion(routes[item.key])}
           >
             {item.label}
           </MenuItem>

@@ -35,7 +35,7 @@ export const VersionSelectorWrapper = styled.div`
   align-items: flex-end;
   justify-content: center;
 
-  .language-selector {
+  .version-selector {
     ${versionSelectorrStyles}
 
     min-width: 72px;
@@ -47,8 +47,8 @@ export const VersionSelectorWrapper = styled.div`
   .dropdown {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     position: absolute;
     top: 100%;
     border: 1.5px solid ${({ theme }) => theme.border};

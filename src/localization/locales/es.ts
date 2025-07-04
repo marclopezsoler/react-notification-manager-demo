@@ -18,8 +18,9 @@ export const esEs: LangSchema = {
         subtitle: "",
         introduction: {
           title: "",
-          subtitle: "",
+          text: "",
         },
+        button: "",
       },
     },
     menu: {

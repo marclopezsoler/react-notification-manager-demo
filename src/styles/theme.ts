@@ -1,6 +1,7 @@
 export const light = {
   brand: "#3795FF",
-  lightBrand: "#c3dfff",
+  brandHover: "#124d87",
+  lightBrand: "#dfedfd",
   bg: "#ffffff",
   fg: "#000000",
   border: "#a1a1a1",

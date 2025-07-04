@@ -6,12 +6,7 @@ const { xSize, ySize } = globals;
 
 export const NavbarWrapper = styled.nav`
   position: relative;
-  width: 100vw;
-  height: 100vh;
-
   z-index: 1;
-
-  background-color: transparent;
 
   .row {
     position: fixed;
@@ -26,6 +21,8 @@ export const NavbarWrapper = styled.nav`
     justify-content: space-between;
 
     padding: 0px 24px;
+
+    pointer-events: auto;
 
     img {
       width: 42px;
@@ -75,6 +72,8 @@ export const NavbarWrapper = styled.nav`
     padding: 24px;
 
     gap: 16px;
+
+    pointer-events: auto;
   }
 `;
 

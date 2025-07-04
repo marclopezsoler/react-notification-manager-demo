@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-import useVersion from "../../hooks/useVersion";
+import useVersion, { versions } from "../../hooks/useVersion";
 
 import { VersionSelectorWrapper } from "./VersionSelector.style";
-
-const versions = [1, 2];
 
 const VersionSelector = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -37,7 +35,7 @@ const VersionSelector = () => {
           e.stopPropagation();
           setIsOpen(!isOpen);
         }}
-        className="language-selector"
+        className="version-selector"
       >
         v{version}
       </button>
