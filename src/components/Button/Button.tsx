@@ -10,7 +10,7 @@ const Button = ({
   variant?: number;
 }) => {
   return (
-    <ButtonWrapper onClick={onClick} $variant={variant}>
+    <ButtonWrapper onClick={onClick} variant={variant}>
       {label}
     </ButtonWrapper>
   );
