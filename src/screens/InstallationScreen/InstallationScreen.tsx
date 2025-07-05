@@ -1,54 +1,20 @@
+import InstallationData from "../../data/content/installation";
+
+import CodeSnippet from "../../components/CodeSnippet/CodeSnippet";
+import { InstallationScreenWrapper } from "./InstallationScreen.style";
+
 const InstallationScreen = () => {
+  const { InstallationDataPage } = InstallationData();
+
   return (
-    <div className="container">
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-      <p>InstallationScreen</p>
-    </div>
+    <InstallationScreenWrapper>
+      <h1>{InstallationDataPage.title}</h1>
+      <CodeSnippet
+        text={InstallationDataPage.command}
+        title={InstallationDataPage.commandTitle}
+        copy
+      />
+    </InstallationScreenWrapper>
   );
 };
 

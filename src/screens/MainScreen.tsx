@@ -8,7 +8,7 @@ import largeLogoLight from "../assets/notiflow-large-logo-light.svg";
 
 import { routes } from "../navigation/routes";
 
-import MainData from "../data/content/v1/main";
+import MainData from "../data/content/main";
 
 import { MainScreenWrapper } from "./MainScreen.style";
 

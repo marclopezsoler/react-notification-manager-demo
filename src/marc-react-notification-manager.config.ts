@@ -7,10 +7,10 @@ import { theme } from "./styles/theme";
 
 setupNotificationConfig({
   defaultMode: "dark",
-  colored: "border",
+  colored: "full",
   hasIcon: false,
-  duration: 7000,
-  align: ["bottom", "right"],
+  duration: 5000,
+  align: ["top", "middle"],
   canClose: false,
   lightTheme: {
     ...DEFAULT_LIGHT,

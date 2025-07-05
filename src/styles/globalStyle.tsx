@@ -14,4 +14,33 @@ export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
   }
+
+      h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+
+      h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      line-height: 24px;
+
+      font-size: 36px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.fg};
+
+      img {
+        width: 240px;
+      }
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 300;
+      color: ${({ theme }) => theme.fg};
+    }
 `;
