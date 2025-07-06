@@ -8,11 +8,11 @@ import { CodeSnippetWrapper } from "./CodeSnippet.style";
 
 const CodeSnippet = ({
   text,
-  title,
+  title = "js",
   copy = false,
 }: {
   text: string;
-  title: string;
+  title?: string;
   copy?: boolean;
 }) => {
   const { notify } = useNotifications();
@@ -31,8 +31,11 @@ const CodeSnippet = ({
 
       notify({
         message: t("codeSnippet.copied"),
-        canClose: true,
+        canClose: false,
+        duration: 3000,
         type: "success",
+        colored: "border",
+        hasIcon: true,
       });
     } catch (error) {
       console.error(error);
@@ -59,7 +62,10 @@ const CodeSnippet = ({
     >
       <div className="snippet-header">
         <span>{title}</span>
-        <button onClick={copy ? copyText : undefined} className="copy-button">
+        <button
+          onClick={copy && copyStatus === undefined ? copyText : undefined}
+          className="copy-button"
+        >
           {copyStatus === true ? (
             <IconCheck size={12} />
           ) : copyStatus === false ? (
@@ -70,9 +76,7 @@ const CodeSnippet = ({
           {buttonText}
         </button>
       </div>
-      <div className="snippet-content">
-        <code>{text}</code>
-      </div>
+      <div className="snippet-content">{text}</div>
     </CodeSnippetWrapper>
   );
 };

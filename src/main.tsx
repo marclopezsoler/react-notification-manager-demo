@@ -29,7 +29,9 @@ export function Root() {
   return (
     <BrowserRouter>
       <Provider store={appStore}>
-        <AppWithTheme />
+        <NotificationsProvider>
+          <AppWithTheme />
+        </NotificationsProvider>
       </Provider>
     </BrowserRouter>
   );
@@ -42,12 +44,10 @@ const AppWithTheme = () => {
     <ThemeProvider theme={theme[mode]}>
       <GlobalStyle />
       <I18nextProvider i18n={i18n}>
-        <NotificationsProvider>
-          <NotificationManager />
-          <ScreenBase currentMode={mode} onToggleTheme={toggleMode}>
-            <AppNavigation />
-          </ScreenBase>
-        </NotificationsProvider>
+        <NotificationManager />
+        <ScreenBase currentMode={mode} onToggleTheme={toggleMode}>
+          <AppNavigation />
+        </ScreenBase>
       </I18nextProvider>
     </ThemeProvider>
   );

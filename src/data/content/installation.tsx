@@ -15,8 +15,10 @@ const InstallationData = () => {
     commandTitle: t(`data:content:${currentVersion}:installation:commandTitle`),
     npm: t(`data:content:${currentVersion}:installation:npm`),
     npmDescription: t(
-      `data:content:${currentVersion}:installation:npmDescription`
+      `data:content:${currentVersion}:installation:npmDescription`,
+      { url: t(`data:content:${currentVersion}:installation:npm`) }
     ),
+    button: t(`data:content:${currentVersion}:installation:button`),
   };
 
   return { InstallationDataPage };

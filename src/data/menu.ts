@@ -13,13 +13,13 @@ const MenuItems = () => {
     },
     {
       id: 2,
-      key: "examples",
-      label: t("data:menu:examples"),
+      key: "customization",
+      label: t("data:menu:customization"),
     },
     {
       id: 3,
-      key: "theme",
-      label: t("data:menu:theme"),
+      key: "examples",
+      label: t("data:menu:examples"),
     },
   ];
 

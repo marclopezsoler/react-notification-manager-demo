@@ -12,6 +12,11 @@ export const CodeSnippetWrapper = styled.div<{
   align-items: center;
   justify-content: space-between;
 
+  width: 100%;
+  max-width: 480px;
+
+  background-color: transparent;
+
   .snippet-header {
     display: flex;
     align-items: center;
@@ -24,9 +29,14 @@ export const CodeSnippetWrapper = styled.div<{
 
     border-bottom: 1px solid ${({ theme }) => theme.border};
 
+    border-radius: 8px 8px 0 0;
+
+    background-color: ${({ theme }) => theme.lightBg};
+
     span {
       font-size: 12px;
       font-weight: 300;
+      margin-left: 8px;
     }
 
     button {
@@ -44,6 +54,9 @@ export const CodeSnippetWrapper = styled.div<{
       color: ${({ $copyStatus, theme }) =>
         $copyStatus === true || $copyStatus === undefined ? theme.fg : "red"};
 
+      cursor: ${({ $copyStatus }) =>
+        $copyStatus === true || $copyStatus === false ? "default" : "pointer"};
+
       background: transparent;
       border: none;
       border-radius: 4px;
@@ -60,6 +73,13 @@ export const CodeSnippetWrapper = styled.div<{
   .snippet-content {
     display: flex;
 
+    width: 100%;
+
+    font-family: monospace;
+
     padding: 8px 12px;
+
+    white-space: pre;
+    overflow-x: auto;
   }
 `;

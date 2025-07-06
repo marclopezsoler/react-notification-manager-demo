@@ -10,7 +10,7 @@
 // import "./App.css";
 
 // function App() {
-//   const { notify, setMode, mode } = useNotifications();
+//   const { notify, mode } = useNotifications();
 
 //   useEffect(() => {
 //     document.documentElement.classList.toggle("dark", mode === "dark");
@@ -30,11 +30,6 @@
 //       }}
 //     >
 //       <img src={mode === "light" ? logoLight : logoDark} width={180} />
-
-//       {/* Switch Mode */}
-//       <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
-//         Switch to {mode === "light" ? "Dark" : "Light"} Mode
-//       </button>
 
 //       {/* SUCCESS */}
 //       <div className="row">

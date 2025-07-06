@@ -6,7 +6,7 @@ import {
 import { theme } from "./styles/theme";
 
 setupNotificationConfig({
-  defaultMode: "dark",
+  defaultMode: "light",
   colored: "full",
   hasIcon: false,
   duration: 5000,

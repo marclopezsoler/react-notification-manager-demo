@@ -3,12 +3,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../redux/reducers/utilsReducer";
 import type { RootState } from "../redux/store";
+import { useNotifications } from "marc-react-notification-manager";
 
 const THEME_KEY = "notiflow-theme";
 
 const useTheme = () => {
   const dispatch = useDispatch();
   const mode = useSelector((state: RootState) => state.utils.theme);
+  const { toggleMode: handleToggleMode } = useNotifications();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -38,13 +40,10 @@ const useTheme = () => {
     if (!mode) return;
     const newMode = mode === "light" ? "dark" : "light";
     dispatch(setTheme(newMode));
+    handleToggleMode();
   };
 
-  const setMode = (newMode: "light" | "dark") => {
-    dispatch(setTheme(newMode));
-  };
-
-  return { mode, toggleMode, setMode };
+  return { mode, toggleMode };
 };
 
 export default useTheme;

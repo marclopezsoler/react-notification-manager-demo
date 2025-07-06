@@ -27,14 +27,43 @@ export const esEs: LangSchema = {
           command: "npm install notiflow",
           commandTitle: "Comando de instalación",
           npm: "https://www.npmjs.com/package/notiflow",
-          npmDescription: "",
+          npmDescription:
+            "Para obtener otros detalles acerca de la libería, haz clic <a href={{url}} target='_blank'>aquí</a>",
+          button: "Continuar con la personalización",
+        },
+        customization: {
+          title: "Muy pronto",
+          description: "Sección en construción",
+        },
+        examples: {
+          title: "Ejemplos de uso",
+          description:
+            "A continuación hay ejemplos del código necesario para mostrar algunas variantes de las notificaciones de la librería.",
+          button: "Notificar",
+          successCustom:
+            "Notificación de éxito con sub-mensaje y sin cierre automático.",
+          successBorder: "Éxito con borde coloreado e icono.",
+          successNone: "Notificación de éxito sin borde ni icono.",
+          errorFull:
+            "Notificación de error con fondo completo y botón de cierre.",
+          errorBorder: "Error con borde coloreado.",
+          errorNone: "Texto de error sin estilo.",
+          infoFull: "Mensaje informativo con fondo completo.",
+          infoBorder: "Información con borde.",
+          infoNone: "Información mínima - solo texto.",
+          alertCustom: "Alerta (paleta personalizada en la configuración).",
+          alertBorder: "Alerta con borde.",
+          alertNone: "Alerta sin color.",
+          noneType: 'Mensaje genérico usando `type: "none"`.',
+          noneNoDuration: "Mensaje con `duration: -1` (permanece abierto).",
+          customIcon: "Notificación con un icono SVG personalizado.",
         },
       },
     },
     menu: {
       installation: "Instalación",
+      customization: "Personalización",
       examples: "Ejemplos",
-      theme: "Tema",
     },
   },
 };
