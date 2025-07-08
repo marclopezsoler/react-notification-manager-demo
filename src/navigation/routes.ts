@@ -2,7 +2,7 @@ export const routes = {
   main: "/",
   installation: "/installation",
   examples: "/examples",
-  customization: "/customization",
+  configuration: "/configuration",
 } as const;
 
 export type RouteKey = keyof typeof routes;
@@ -10,6 +10,6 @@ export type RouteKey = keyof typeof routes;
 export const routeKeys = [
   "main",
   "installation",
-  "customization",
+  "configuration",
   "examples",
 ] as const;

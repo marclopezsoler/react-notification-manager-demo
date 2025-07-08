@@ -13,8 +13,8 @@ const MenuItems = () => {
     },
     {
       id: 2,
-      key: "customization",
-      label: t("data:menu:customization"),
+      key: "configuration",
+      label: t("data:menu:configuration"),
     },
     {
       id: 3,

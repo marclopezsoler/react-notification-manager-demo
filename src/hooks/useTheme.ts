@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../redux/reducers/utilsReducer";
 import type { RootState } from "../redux/store";
-import { useNotifications } from "marc-react-notification-manager";
+
+import { useNotifications } from "notiflow";
 
 const THEME_KEY = "notiflow-theme";
 

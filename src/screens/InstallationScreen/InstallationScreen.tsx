@@ -24,7 +24,7 @@ const InstallationScreen = () => {
       <div className="footer">
         <Button
           label={InstallationDataPage.button}
-          onClick={() => navigateWithVersion(routes.customization)}
+          onClick={() => navigateWithVersion(routes.configuration)}
         />
         <div
           dangerouslySetInnerHTML={{

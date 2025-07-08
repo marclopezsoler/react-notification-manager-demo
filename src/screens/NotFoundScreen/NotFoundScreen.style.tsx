@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CustomizationScreenWrapper = styled.div`
+export const NotFoundScreenWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

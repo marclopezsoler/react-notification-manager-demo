@@ -1,4 +1,4 @@
-import { useNotifications } from "marc-react-notification-manager";
+import { useNotifications } from "notiflow";
 
 import { ExamplesScreenWrapper } from "./ExamplesScreen.style";
 import ExamplesData from "../../data/content/examples";

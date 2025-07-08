@@ -1,8 +1,4 @@
-import {
-  DEFAULT_DARK,
-  DEFAULT_LIGHT,
-  setupNotificationConfig,
-} from "marc-react-notification-manager";
+import { DEFAULT_DARK, DEFAULT_LIGHT, setupNotificationConfig } from "notiflow";
 import { theme } from "./styles/theme";
 
 setupNotificationConfig({

@@ -9,12 +9,16 @@ export const ScreenBaseWrapper = styled.section`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   width: 100vw;
   height: 100vh;
 
   .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
     left: ${xSize}px;
     width: calc(100vw - ${xSize}px);

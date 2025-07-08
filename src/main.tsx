@@ -3,12 +3,9 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import "./marc-react-notification-manager.config.ts";
+import "./notiflow.ts";
 
-import {
-  NotificationManager,
-  NotificationsProvider,
-} from "marc-react-notification-manager";
+import { NotificationManager, NotificationsProvider } from "notiflow";
 import { I18nextProvider } from "react-i18next";
 import { ThemeProvider } from "styled-components";
 import i18n from "./localization/i18n.ts";
@@ -24,6 +21,7 @@ import useTheme from "./hooks/useTheme.ts";
 import ScreenBase from "./components/ScreenBase/ScreenBase.tsx";
 
 import { theme } from "./styles/theme.ts";
+import Footer from "./components/Footer/Footer.tsx";
 
 export function Root() {
   return (
@@ -47,6 +45,7 @@ const AppWithTheme = () => {
         <NotificationManager />
         <ScreenBase currentMode={mode} onToggleTheme={toggleMode}>
           <AppNavigation />
+          <Footer />
         </ScreenBase>
       </I18nextProvider>
     </ThemeProvider>

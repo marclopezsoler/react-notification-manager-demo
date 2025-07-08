@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { IconCheck, IconCopy, IconX } from "@tabler/icons-react";
-import { useNotifications } from "marc-react-notification-manager";
+import { useNotifications } from "notiflow";
 import { useTranslation } from "react-i18next";
 
 import { CodeSnippetWrapper } from "./CodeSnippet.style";
